@@ -1,7 +1,7 @@
 var  express = require('express'),
     app = express(),
-    db  = require('./modules/db/db'),
-    mDb = require('./modules/db/messages.db'),
+    //db  = require('./modules/db/db'),
+    //mDb = require('./modules/db/messages.db'),
     cookieParser = require('cookie-parser'),
     session = require('express-session');
 
