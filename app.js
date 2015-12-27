@@ -10,7 +10,7 @@ var chatRouts = require('./server/routes/chat')();
 var adminRouts = require('./server/routes/admin')();
 
 // setup app settings and session
-app.use(express.static(__dirname + '../../client'));
+app.use(express.static(__dirname + '/client'));
 app.use(cookieParser());
 app.use(session({   secret: '1234567890QWERTY',
     resave: false,
@@ -20,7 +20,7 @@ app.use(session({   secret: '1234567890QWERTY',
 
 
 app.get('/', function (req, res) {
-    res.sendFile("index.html", {root: './client'});
+    res.sendFile("main.html", {root: __dirname + '/client'});
 });
 
 
