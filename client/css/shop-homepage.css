@@ -24,14 +24,18 @@ body {
 .caption {
     height: 130px;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .caption h4 {
-    white-space: nowrap;
+    /*white-space: nowrap;*/
+    padding: 2px;
+
 }
 
 .thumbnail img {
-    width: 100%;
+    width: 320px;
+    height: 150px;
 }
 
 .ratings {

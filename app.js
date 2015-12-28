@@ -5,9 +5,10 @@ var  express = require('express'),
 
 // Modules
 var laptopsDb = require('./server/modules/laptops/db.laptops');
-var searchRouts = require('./server/routes/search')();
-var chatRouts = require('./server/routes/chat')();
-var adminRouts = require('./server/routes/admin')();
+var homeRouts = require('./server/routes/home')(app);
+var searchRouts = require('./server/routes/search')(app);
+var chatRouts = require('./server/routes/chat')(app);
+var adminRouts = require('./server/routes/admin')(app);
 
 // setup app settings and session
 app.use(express.static(__dirname + '/client'));
@@ -18,10 +19,10 @@ app.use(session({   secret: '1234567890QWERTY',
 
 
 
-
-app.get('/', function (req, res) {
-    res.sendFile("main.html", {root: __dirname + '/client'});
-});
+//
+//app.get('/', function (req, res) {
+//    res.sendFile("main.html", {root: __dirname + '/client'});
+//});
 
 
 // run server

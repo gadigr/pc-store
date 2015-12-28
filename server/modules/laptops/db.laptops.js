@@ -19,6 +19,12 @@ MongoClient.connect(url, function(err, db) {
         });
     });
 
+    module.exports.getAll = function(callback){
+        collection.find({}).toArray(function (err, docs) {
+            callback(docs);
+        });
+    };
+
     //module.exports.getRelevantMessage = function(screen,next){
     //
     //    var date = new Date();
