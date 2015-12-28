@@ -53,6 +53,20 @@ body {
     color: #333;
 }
 
+.navbar-inverse {
+    background-color: #ff963f;
+    border-width: 0;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.35);
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fcfffc;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fcfffc;
+}
+
 footer {
     margin: 50px 0;
 }

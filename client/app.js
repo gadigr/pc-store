@@ -15,9 +15,9 @@ app.config(['$routeProvider',
             templateUrl: 'views/admin.html',
             controller: 'adminCtrl'
         }).
-        when('/search', {
-            templateUrl: 'views/search.html',
-            controller: 'searchCtrl'
+        when('/find', {
+            templateUrl: 'views/find.html',
+            controller: 'findCtrl'
         }).
         otherwise({
             redirectTo: '/home'

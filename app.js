@@ -6,7 +6,7 @@ var  express = require('express'),
 // Modules
 var laptopsDb = require('./server/modules/laptops/db.laptops');
 var homeRouts = require('./server/routes/home')(app);
-var searchRouts = require('./server/routes/search')(app);
+var findRouts = require('./server/routes/find')(app);
 var chatRouts = require('./server/routes/chat')(app);
 var adminRouts = require('./server/routes/admin')(app);
 
@@ -16,13 +16,6 @@ app.use(cookieParser());
 app.use(session({   secret: '1234567890QWERTY',
     resave: false,
     saveUninitialized: false}));
-
-
-
-//
-//app.get('/', function (req, res) {
-//    res.sendFile("main.html", {root: __dirname + '/client'});
-//});
 
 
 // run server
