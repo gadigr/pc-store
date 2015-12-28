@@ -70,6 +70,11 @@ body {
     color: #fcfffc;
 }
 
+.navbar-brand {
+    padding:0;
+    top: 50%; left: 50%;
+}
+
 footer {
     margin: 50px 0;
 }
