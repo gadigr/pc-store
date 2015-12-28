@@ -14,6 +14,9 @@ body {
 
 .carousel-holder {
     margin-bottom: 30px;
+    width:100%;
+    height: 300px;
+    overflow: hidden;
 }
 
 .carousel-control,
