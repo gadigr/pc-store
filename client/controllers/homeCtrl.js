@@ -1,7 +1,5 @@
 app.controller('homeCtrl', function($scope, $http) {
 
-    console.log('home');
-
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     ctx.font = "30px Arial";
@@ -19,6 +17,4 @@ app.controller('homeCtrl', function($scope, $http) {
             $scope.laptops = response.data;
         });
 
-});/**
- * Created by gadi on 12/28/2015.
- */
+});
