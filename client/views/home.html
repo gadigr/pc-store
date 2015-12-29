@@ -11,14 +11,17 @@
             <div class="list-group">
                 <input ng-model="searchText" type="text" class="form-control" placeholder="Search by name..." value="">
                 <h5><span class="glyphicon glyphicon-search"></span>    Advanced Search</h5>
-
+                <form class="filter" id="facets" ng-submit="doQuery(filter)">
+                    <select ng-model="filter.brand" ng-options="item for item in search.brands">
+                        <option value="">Select Brand</option>
+                    </select>
+                </form>
             </div>
         </aside>
 
         <div class="col-md-9">
             <header>
                 <video class="row carousel-holder" autoplay loop poster="../assets/carusel1.jpg" muted id="bgvid">
-                    <!--<source src="../assets/polina.webm" type="video/webm">-->
                     <source src="../assets/banner.mp4" type="video/mp4">
                 </video>
             </header>

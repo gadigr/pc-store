@@ -1,5 +1,7 @@
 app.controller('homeCtrl', function($scope, $http) {
 
+    $scope.search = {};
+
     // build canvas
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
@@ -21,6 +23,10 @@ app.controller('homeCtrl', function($scope, $http) {
             $scope.laptops = response.data;
         });
 
-    $scope.filter
+    $http.get('/home/get_att/att_brand')
+        .then(function (response){
+            console.log(response);
+            $scope.search.brands = response.data;
+        })
 
 });
