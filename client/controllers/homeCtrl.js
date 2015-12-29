@@ -21,4 +21,6 @@ app.controller('homeCtrl', function($scope, $http) {
             $scope.laptops = response.data;
         });
 
+    $scope.filter
+
 });

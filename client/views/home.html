@@ -9,7 +9,7 @@
         <aside class="col-md-3">
             <header class="search">Search Laptops</header>
             <div class="list-group">
-                <input name="q" ng-model="filter.qry" type="text" class="form-control input-lg" placeholder="Search by name..." value="">
+                <input ng-model="searchText" type="text" class="form-control" placeholder="Search by name..." value="">
             </div>
         </aside>
 
@@ -23,7 +23,7 @@
 
             <section class="row">
 
-                <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="laptop in laptops">
+                <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="laptop in laptops | filter:searchText">
                     <div class="thumbnail">
                         <img ng-src="{{laptop.image}}">
                         <div class="caption">
