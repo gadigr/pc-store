@@ -9,6 +9,9 @@ module.exports = function(app) {
     app.route('/home/GetLaptops')
         .get(home.getAllLaptops);
 
+    app.route('/home/get_att/:att')
+        .get(home.getSearchValues);
+
     //app.route('/home/GetMovies/:qry/:director/:genre/:minPrice/:maxPrice/:minYear/:maxPrice')
     //    .get(home.getMovies);
     //

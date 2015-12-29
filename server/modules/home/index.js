@@ -17,3 +17,11 @@ exports.getAllLaptops = function(req, res) {
        res.send(docs);
     });
 };
+
+exports.getSearchValues = function(req, res) {
+  console.log('get ' + req.params.att);
+
+    laptopsDb.getAttributeOptions(req.params.att, function (opts) {
+       res.send(opts);
+    });
+};

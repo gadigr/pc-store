@@ -25,6 +25,15 @@ MongoClient.connect(url, function(err, db) {
         });
     };
 
+    module.exports.getAttributeOptions = function (att, callback){
+        var test = collection.distinct(att).then(function (data) {
+            callback(data);
+        });
+
+
+
+    }
+
     //module.exports.getRelevantMessage = function(screen,next){
     //
     //    var date = new Date();
