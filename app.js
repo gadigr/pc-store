@@ -1,10 +1,15 @@
-var  express = require('express'),
+var express = require('express'),
+    mongoose = require('mongoose'),
+    url = 'mongodb://localhost:27017/laptops_db',
     app = express(),
     cookieParser = require('cookie-parser'),
     session = require('express-session');
 
+mongoose.connect(url);
+
+
 // Modules
-var laptopsDb = require('./server/modules/laptops/db.laptops');
+//var laptopsDb = require('./server/modules/laptops/db.laptops');
 var homeRouts = require('./server/routes/home')(app);
 var findRouts = require('./server/routes/find')(app);
 var chatRouts = require('./server/routes/chat')(app);

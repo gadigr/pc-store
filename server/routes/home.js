@@ -1,5 +1,5 @@
 module.exports = function(app) {
-    var home = require('../modules/home');
+    var home = require('../controllers/home');
     app.route('/')
         .get(home.render);
 

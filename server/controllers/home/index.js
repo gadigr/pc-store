@@ -2,7 +2,8 @@
  * Created by gadi on 12/28/2015.
  */
 
-var laptopsDb = require('../laptops/db.laptops');
+var laptopsDb = require('../../models/laptops');
+
 
 exports.render = function(req, res) {
     var path = require('path');
