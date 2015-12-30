@@ -27,6 +27,7 @@ var pcSchema = mongoose.Schema({
     name: String,
     price: Number
 });
+
 var pcModel = mongoose.model('pc', pcSchema);
 
 db.on('error', console.error.bind(console, 'connection error:'));
