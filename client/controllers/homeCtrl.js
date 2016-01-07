@@ -25,8 +25,12 @@ app.controller('homeCtrl', function($scope, $http) {
 
     $http.get('/home/get_att/att_brand')
         .then(function (response){
-            console.log(response);
             $scope.search.brands = response.data;
-        })
+        });
+
+    $http.get('http://api.openweathermap.org/data/2.5/weather?q=ramatgan&units=metric&appid=ebef723e3d1bc29c60a071f1b0d2278e')
+        .then(function (response) {
+            $scope.weather = response.data.main.temp + " C - " + response.data.weather[0].description;
+        });
 
 });

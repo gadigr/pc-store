@@ -18,6 +18,10 @@ body {
     width: 100%;
 }
 
+.weather {
+    margin-top: 15px;
+    color: #2C2C2C;
+}
 .carousel-holder {
     margin-bottom: 30px;
     width:100%;
