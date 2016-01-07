@@ -1,4 +1,5 @@
-var app = angular.module( 'storeApp', ['ngRoute'] );
+var app = angular.module( 'storeApp', ['ngRoute', 'ChatService', 'btford.socket-io'] )
+    .value('nickName', 'anonymous');
 
 app.config(['$routeProvider',
     function($routeProvider) {

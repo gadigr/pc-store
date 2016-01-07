@@ -3,13 +3,15 @@ var express = require('express'),
     url = 'mongodb://localhost:27017/laptops_db',
     app = express(),
     cookieParser = require('cookie-parser'),
-    session = require('express-session');
+    session = require('express-session'),
+    io = require('socket.io');
+
+
 
 mongoose.connect(url);
 
 
 // Modules
-//var laptopsDb = require('./server/modules/laptops/db.laptops');
 var homeRouts = require('./server/routes/home')(app);
 var findRouts = require('./server/routes/find')(app);
 var chatRouts = require('./server/routes/chat')(app);
@@ -29,3 +31,6 @@ var server = app.listen(3000, function () {
     var port = server.address().port;
     console.log('app listening at http://%s:%s', host, port);
 });
+
+io = io.listen(server);
+require('./server/controllers/chat/')(io);
