@@ -12,10 +12,28 @@
                 <input ng-model="searchText" type="text" class="form-control" placeholder="Search by name..." value="">
                 <h5><span class="glyphicon glyphicon-search"></span>    Advanced Search</h5>
                 <form class="filter" id="facets" ng-submit="doQuery(filter)">
-                    <select ng-model="filter.brand" ng-options="item for item in search.brands">
-                        <option value="">Select Brand</option>
+                     <span ng-repeat="brand in search.brands">
+                      <label class="checkbox" for="{{brand}}">
+                          <input ng-model-options="{getterSetter: true}" ng-model="brand.Selected" type="checkbox" name="selectedBrands[]"  value="{{brand._id}}" id="{{brand}}" />
+                          {{brand._id}} ({{brand.total}})
+                      </label>
+                    </span>
+
+                    <!--<label for="brand">Laptop Brand:</label>-->
+                    <!--<select id="brand" ng-model="filter.brand" ng-options="item for item in search.brands">-->
+                        <!--<option value="">Select Brand</option>-->
+                    <!--</select>-->
+                    <label for="cpu">Laptop CPU:</label>
+                    <select id="cpu" ng-model="filter.att_cpu" ng-options="item for item in search.cpus">
+                        <option value="">Select CPU</option>
                     </select>
+                    <label for="screen">Laptop Screen Size:</label>
+                    <select id="screen" ng-model="filter.att_screen_size" ng-options="item for item in search.screens">
+                        <option value="">Select Size</option>
+                    </select>
+                    <input type="submit"/>
                 </form>
+                <button ng-click="clear()">Clear Search</button>
             </div>
         </aside>
 

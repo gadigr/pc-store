@@ -12,15 +12,25 @@ exports.render = function(req, res) {
 
 
 exports.getAllLaptops = function(req, res) {
-    laptopsDb.getAll(function(docs){
+    laptopsDb.getAll( function(docs){
        res.send(docs);
     });
 };
 
 exports.getSearchValues = function(req, res) {
-  console.log('get ' + req.params.att);
-
     laptopsDb.getAttributeOptions(req.params.att, function (opts) {
        res.send(opts);
+    });
+};
+
+exports.getBrands = function (req,res) {
+    laptopsDb.getBrands(function(docs) {
+        res.send(docs);
+    })
+}
+
+exports.advancedSearch = function (req, res) {
+    laptopsDb.DoQuery(req.body, function(docs){
+        res.send(docs);
     });
 };

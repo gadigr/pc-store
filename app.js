@@ -4,11 +4,21 @@ var express = require('express'),
     app = express(),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
-    io = require('socket.io');
-
-
+    io = require('socket.io'),
+    bodyParser = require('body-parser');
 
 mongoose.connect(url);
+
+// setup app settings and session
+app.use(express.static(__dirname + '/client'));
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
+app.use( bodyParser.json() );
+app.use(cookieParser());
+app.use(session({   secret: '1234567890QWERTY',
+    resave: false,
+    saveUninitialized: false}));
 
 
 // Modules
@@ -16,13 +26,6 @@ var homeRouts = require('./server/routes/home')(app);
 var findRouts = require('./server/routes/find')(app);
 var chatRouts = require('./server/routes/chat')(app);
 var adminRouts = require('./server/routes/admin')(app);
-
-// setup app settings and session
-app.use(express.static(__dirname + '/client'));
-app.use(cookieParser());
-app.use(session({   secret: '1234567890QWERTY',
-    resave: false,
-    saveUninitialized: false}));
 
 
 // run server
